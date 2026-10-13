@@ -1,0 +1,65 @@
+namespace MyFirstProject
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Student student = new Student("Alex", 123);
+
+            student.Mark = 85;
+
+            student.Describe();
+        }
+        public abstract class Person
+        {
+            protected string Name;
+            protected int Id;
+
+            protected Person(string name, int id)
+            {
+                Name = name;
+                Id = id;
+            }
+            public abstract void Describe();
+        }
+        public class Student : Person
+        {
+            private int mark; 
+
+            public int Mark
+            {
+                get
+                {
+                    return mark;
+                }
+                set
+                {
+                    if (value > 100)
+                    {
+                        Console.WriteLine("Nahui");
+                    }
+                    else if (value < 0)
+                    {
+                        Console.WriteLine("dalbayob");      
+                    }
+                    else
+                    {
+                        Console.WriteLine("Good");
+                        mark = value;
+                    }
+                }
+            }
+            public Student(string name, int id) : base (name, id)
+            {
+                Name = name;
+                Id = id;
+            }
+            public override void Describe()
+            {
+                Console.WriteLine($"Student: {Name}, Mark: {mark}");
+            }
+        }
+    }
+}
+
+Roman Semyonov 2310213529

@@ -24,7 +24,7 @@ namespace MyFirstProject
         }
         public class Student : Person
         {
-            private int mark; 
+            private int mark;
 
             public int Mark
             {
@@ -36,20 +36,20 @@ namespace MyFirstProject
                 {
                     if (value > 100)
                     {
-                        Console.WriteLine("Nahui");
+                        Console.WriteLine("Failed");
                     }
                     else if (value < 0)
                     {
-                        Console.WriteLine("dalbayob");      
+                        Console.WriteLine("Failed");
                     }
                     else
                     {
-                        Console.WriteLine("Good");
+                        Console.WriteLine("Passed");
                         mark = value;
                     }
                 }
             }
-            public Student(string name, int id) : base (name, id)
+            public Student(string name, int id) : base(name, id)
             {
                 Name = name;
                 Id = id;
